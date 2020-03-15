@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 template<class T> void ShowTypeSize()
 {
@@ -35,6 +36,24 @@ static void TestDefine()
     std::cout << ld2 << std::endl;
 }
 
+static void TestString()
+{
+    std::string name1("");
+    std::cout << "string:" << name1.length() << std::endl;
+    std::cout << "string:" << name1.size() << std::endl;
+    std::cout << "string:" << name1.capacity() << std::endl;
+
+    std::string name2("11111111111");
+    std::cout << "string:" << name2.length() << std::endl;
+    std::cout << "string:" << name2.size() << std::endl;
+    std::cout << "string:" << name2.capacity() << std::endl;
+
+    for (int index = 0; index <= 64; index++) {
+        std::string name(index, '=');
+        std::cout << index << ", capacity:" << name.capacity() << ": " << name << std::endl;
+    }
+}
+
 static void TestSize()
 {
     std::cout << "show size" << std::endl;
@@ -53,6 +72,7 @@ static void TestSize()
     ShowTypeSize<double>();
     ShowTypeSize<long double>();
     ShowTypeSize<ADDRESS>();
+    ShowTypeSize<std::string>();
 }
 
 static void Run()
@@ -60,6 +80,7 @@ static void Run()
     TestSize();
     TestUnion();
     TestDefine();
+    TestString();
 }
 
 

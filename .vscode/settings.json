@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "try.h": "c"
+        "try.h": "c",
+        "iostream": "cpp",
+        "xstring": "cpp"
     }
 }
